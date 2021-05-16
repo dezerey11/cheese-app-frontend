@@ -1,0 +1,62 @@
+////// variable //////
+$maincolor: rgb(75, 53, 116);
+$contrastcolor: rgb(230, 207, 82);
+
+@mixin gold-text-purple-bg {
+  color: $contrastcolor;
+  background-color: $maincolor;
+}
+
+@mixin purple-text-gold-bg {
+  color: $maincolor;
+  background-color: $contrastcolor;
+}
+
+////// Header /////
+nav {
+  @include gold-text-purple-bg;
+  display: flex;
+  justify-content: flex-start;
+
+  a {
+    @include purple-text-gold-bg;
+    div {
+      margin: 10px;
+      font-size: large;
+    }
+  }
+}
+
+////// Form //////
+section,
+div {
+  form {
+    input {
+      @include gold-text-purple-bg;
+      padding: 10px;
+      font-size: 1.1em;
+      margin: 10px;
+
+      &[type="submit"]:hover {
+        @include purple-text-gold-bg;
+      }
+    }
+  }
+}
+
+////// Button //////
+button#delete {
+  @include gold-text-purple-bg;
+  display: block;
+  margin: auto;
+  font-size: 1.3em;
+  padding: 10px;
+}
+
+////// Images //////
+img {
+  width: 300px;
+  height: 300px;
+  border-radius: 90px;
+  object-fit: cover;
+}
